@@ -9,7 +9,7 @@ from src.predict_job_change.pipelines.data_preparation.nodes import encode_categ
 model_path = "data/06_models/dt_model.pkl"
 model = pickle.load(open(model_path, "rb"))
 
-st.title("AI Predykcja na podstawie danych użytkownika")
+st.title("Czy zmienisz prace")
 
 
 city_development_index = st.slider("City Development Index", 0.0, 1.0, 0.5, step=0.01)
