@@ -1,8 +1,6 @@
 import streamlit as st
 import pandas as pd
 import pickle
-import os
-import sys
 import numpy as np
 
 
@@ -41,15 +39,12 @@ input_data = pd.DataFrame({
     "last_new_job": [last_new_job],
 })
 
-
 st.write("### Twoje dane:")
 st.dataframe(input_data)
-
 
 if st.button("Przewiduj"):
 
     x = encode_categorical_columns(input_data)
-
     y_pred = model.predict(x)
 
     if int(np.array(y_pred).item()) == 1:
