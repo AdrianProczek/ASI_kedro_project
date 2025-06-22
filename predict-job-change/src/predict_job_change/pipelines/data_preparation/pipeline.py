@@ -10,7 +10,7 @@ def create_pipeline(**kwargs) -> Pipeline:
     return pipeline([
         node(
             func=remove_rows_with_missing_values,
-            inputs="main_dataset",
+            inputs="dataset",
             outputs="data_without_missing_gender_rows",
             name="remove_rows_with_missing_gender_values"
         ),

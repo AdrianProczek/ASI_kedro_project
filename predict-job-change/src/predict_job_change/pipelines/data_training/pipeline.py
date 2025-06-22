@@ -12,7 +12,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         [
             node(
                 func=split_data,
-                inputs=["normalized_data"],
+                inputs="normalized_data",
                 outputs=["x_train", "x_test", "y_train", "y_test"],
                 name="split_data",
             ),
