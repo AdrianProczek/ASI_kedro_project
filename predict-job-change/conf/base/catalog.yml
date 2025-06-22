@@ -48,5 +48,5 @@ normalized_data:
   filepath: data/02_intermediate/normalized_data.parquet
 
 dt_model:
-  type: pickle.PickleDataSet
+  type: pickle.PickleDataset
   filepath: data/06_models/dt_model.pkl
