@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  kedro:
+    build: .
+    command: kedro run
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/gcp-key.json
+    volumes:
+      - .:/app
+      - ./gcp-key.json:/app/gcp-key.json
+    depends_on:
+      - streamlit
+
+  streamlit:
+    build:
+      context: .
+    command: streamlit run streamlit_app.py --server.port=8501 --server.enableCORS=false
+    ports:
+      - "8501:8501"
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/gcp-key.json
+    volumes:
+      - .:/app
+      - ./gcp-key.json:/app/gcp-key.json
