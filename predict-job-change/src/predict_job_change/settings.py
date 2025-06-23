@@ -5,6 +5,15 @@ https://docs.kedro.org/en/stable/kedro_project_setup/settings.html."""
 # Instantiated project hooks.
 from predict_job_change.hooks import SparkHooks  # noqa: E402
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+print("GCS KEY:", os.getenv("GOOGLE_APPLICATION_CREDENTIALS"))
+
+
+
 # Hooks are executed in a Last-In-First-Out (LIFO) order.
 HOOKS = (SparkHooks(),)
 

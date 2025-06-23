@@ -41,7 +41,13 @@
 
 dataset:
   type: pandas.CSVDataset
-  filepath: data/01_raw/dataset.csv
+  filepath: gs://kedro-dataset-bucket/dataset.csv
+  save_args:
+    index: False
+
+#dataset:
+#  type: pandas.CSVDataset
+#  filepath: data/01_raw/dataset.csv
 
 normalized_data:
   type: pandas.ParquetDataset

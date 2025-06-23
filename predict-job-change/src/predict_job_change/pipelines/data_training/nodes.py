@@ -29,5 +29,5 @@ def evaluate_model(
 
     y_predictions = dt_model.predict(x_test)
     y_accuracy = accuracy_score(y_test, y_predictions)
-
+    print(f"Model accuracy {y_accuracy}")
     return {"Model accuracy": y_accuracy}
